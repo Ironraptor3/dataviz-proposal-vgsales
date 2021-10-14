@@ -1,9 +1,9 @@
 # vgsales Visualization Project
 
 ## Data
-I plan on using this [data](https://gist.github.com/Ironraptor3/34f3938c703111353ee5f28cc9b29d68) for the project.
+I plan on using this [data for video game sales](https://gist.github.com/Ironraptor3/34f3938c703111353ee5f28cc9b29d68) for the project.
 
-This data is the sales of various video games in the year range \[1980, 2016].  It originates from [this](https://www.kaggle.com/kedokedokedo/vgsales) link.
+This data is the sales of various video games in the year range \[1980, 2016].  It originates from [this](https://www.kaggle.com/kedokedokedo/vgsales) link.  Video games interest me because in my undergraduate degree, I was a Computer Science and IMGD double major.
 
 A full breakdown of this data is available on the README associated with the linked Github Gist above, but it is also here for convenience:
 
@@ -71,18 +71,101 @@ Flow of Events:
 
 ## Prototypes
 
-This is my latest prototype of the visualization:
+### Scatter plot
+
+This was my first rendering of the data being used in this project.  It takes the form of a very basic scatter plot with years plotted against various video game sales.  The circles are transparent to make overplotting more obvious.
+
+[![image](https://user-images.githubusercontent.com/6307522/137227363-7fe5e5ad-6bc7-4ac0-8efa-85a462d2884f.png)](https://vizhub.com/Ironraptor3/ccdcdc9969ca4697b59e6457db7dbf30)
+
+
+### Initial
+
+This is my first prototype of the visualization:
 [![image](https://user-images.githubusercontent.com/6307522/134274649-12f3a7b1-f87a-4795-90dd-f676ae88fbbd.png)](https://vizhub.com/Ironraptor3/af4ff68c075143b89021a0df39be3d70)
 
 Each line graph within this set of small multiples convey information about sales for the various video game genres.  These are plotted against time on the x axis.  The first charge corresponds to global sales, followed by: NA, JP, EU, and Other.  Working functionality includes a crosshair that forms on your cursor on all small multiples.
 
-The next iteration of this prototype hopefully includes:
-- A key explaining each of the colors
-- Code smell fixes (calculate aggregate data once, more modularity, less magic values)
-- Titles at the top of each graph
-- The ability to toggle each graph and re-render
-- The ability to render different data within the csv
-- The ability to toggle various lines/colors
-- Zoom and drag (seems to be a native svg function)
+Lines appear on click to give the user a guide to better compare values.  These guide lines likewise appear on all small multiples simultaneously.
 
-All of the information about this prototype, including more detailed information about the code, is included within the VizHub source (You can click the picture).
+### First Iteration
+
+The next iteration looked like this: [![image](https://user-images.githubusercontent.com/6307522/137227461-8980f600-099a-49d0-9073-6c41875ac84c.png)](https://vizhub.com/Ironraptor3/763afd26abd24fe694f6a14c30d0d71c)
+
+This improved version of the original prototype now has a key and titles above the various small multiples to explain which data each visualizes.  The key also comes with a higlighting feature: users hovering over an item will cause it to have a much thicker line, becoming more noticable.
+
+Clicking on an item in the key causes the line to disappear/reappear, to allow users to compare specific lines.
+
+On the technical side, many comments were added to the code, and many magic values were placed in constants.  Data aggregation (an expensive process) is now only performed once when the data is first loaded.
+
+
+### Second Iteration
+
+This is the next iteration: [![image](https://user-images.githubusercontent.com/6307522/137227684-2655cb59-10c5-4478-87e2-b3a2fa1d5b38.png)](https://vizhub.com/Ironraptor3/58056bddb4914d38aa01a85e7b4459f0)
+
+A major improvement includes the ability to pan and zoom the graphs.  When this is done to one small multiple, all small multiples repond to keep the comparison aligned.
+
+When highlighted, a line now comes to the top of the z ordering, and gains a black border.  Lines that are not highlighted still blend together now, reducing the effects of occlusion.
+
+Adjustments were made to several constants to provide a better visual feeling.
+
+### Third Iteration
+
+This is the latest iteration of the project: [![image](https://user-images.githubusercontent.com/6307522/137227924-2dbb5a47-f0cd-4468-bbf2-5fd58608de5a.png)](https://vizhub.com/Ironraptor3/baa79abe42d8486fa829b80d31aefeeb)
+
+While there does not appear to be a lot of changes in a static image, many interactions were improved:
+
+The width of all shapes (lines, polylines, and circles) now decrease when small multiples are zoomed in on.  This allows users to more precisely compare values.  The axes are now within their own SVGs, meaning their viewbox gets updated in such a way that they remain on screen at most times.
+
+For user convenience, a reset button is now present to reset the viewboxes of all small multiples, allowing a user to return to the starting state.
+
+Panning now slows down on higher zoom levels (to allow a more consistent pan speed throughout zoom levels).
+
+
+## Interaction
+
+Interaction is key within this project.  Many methods of interaction have been added throughout the iterations of it so far, enumerated here for convenience:
+
+- Guidelines which appear when the user clicks
+  + These now scale with zoom
+  + These are drawn on all small multiples
+- Interactive Key
+  + Hover to highlight (now with a dark outline and a change in z ordering)
+  + Click to toggle visibility
+- Zoom and Pan
+  + All small multiples follow this action
+  + Pan speed scales with zoom
+  + Including a reset button to recenter the viewbox to the default position
+  + Shapes scale down to account for high zoom
+  + Axes now remain (mostly) visible
+
+I currently plan on adding the following features:
+
+- Toggle entire graphs on and off
+  + Rescaling the ones that remain and rearranging them
+- Dropdowns that allow users to compare different values
+
+## Schedule of Deliverables
+
+- Code reorganization (November 3)
+  + More modularity
+  + Better segementation of tasks
+  + More comments
+  + Get rid of magic numbers
+- Axis and guideline fixes (November 10)
+  + Axis granularity changes with zoom level
+  + Axis always on screen (infinite)
+  + Guideline always on screen (infinite)
+- Visual fixes (November 17)
+  + Color pallette fixes
+  + Constants involving margins, spacing, thickness
+- Toggle graphs on and off (November 24)
+  + A control panel to perform this functionality
+  + Rescaling graphs
+  + Redrawing graphs in the same state as they were previously in
+- Using different data (December 1)
+  + Dropdowns that respond to events
+  + Re-rendering graphs based on different categories on each axis
+- Final submission (December 8)
+  + All overflow in schedule addressed
+  + Bug fixes
+  + Description Revamps
