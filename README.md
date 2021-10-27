@@ -138,7 +138,7 @@ Each color represents a different region (global sales have been excluded for ob
 
 This still requires a key, as the default behavior of the plot functionality of Observable Plot does not add it.
 
-Finally, I experimented with a Steamgraph (Stacked area chart which is centered):
+Finally, I experimented with a Streamgraph (Stacked area chart which is centered):
 
 [![image](https://user-images.githubusercontent.com/6307522/139159617-18e4e58f-ca1e-4f8d-8df2-dcfcf69b5b78.png)](https://vizhub.com/Ironraptor3/e9f27fcd1af343cc8a0577364c35c873)
 
