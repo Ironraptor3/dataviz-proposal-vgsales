@@ -120,6 +120,29 @@ For user convenience, a reset button is now present to reset the viewboxes of al
 
 Panning now slows down on higher zoom levels (to allow a more consistent pan speed throughout zoom levels).
 
+### Fourth Iteration
+
+This iteration was mainly an exploratory iteration in which I created several different Visualizations in response to the feedback given by the professor.
+
+I first added interaction to the alternative format proposed by the professor, and altered the aggregation method from entry count to sales summation:
+
+[![image](https://user-images.githubusercontent.com/6307522/139158738-0f8f27f3-9200-4e45-8f9d-0cabfb6402b5.png)](https://vizhub.com/Ironraptor3/cf7cb8aa3a1742b89023befde3926ce3)
+
+Specifically, there exists a dropdown menu to survey various sales (Global, NA, EU, JP, and Other).  I appreciated the professor's suggestion of a graph in this format, as it is very easy to see how the popularity/profitability of various game genres change over time within each region and overall.
+
+I made a second variation of this graph without the interaction, but instead stacking the bar charts within the small multiples:
+
+[![image](https://user-images.githubusercontent.com/6307522/139159339-75f3b237-d971-45fc-b392-d91e5f359ca8.png)](https://vizhub.com/Ironraptor3/873c10b2441d4dac8ade0ab34e0bd677)
+
+Each color represents a different region (global sales have been excluded for obvious regions).  This allows an overview of how each region has contributed to the patterns within each genre, and ends up being a stronger way of comparing the global sales of each genre over time.  It is still rather hard to compare specific countries by eye, however.
+
+This still requires a key, as the default behavior of the plot functionality of Observable Plot does not add it.
+
+Finally, I experimented with a Steamgraph (Stacked area chart which is centered):
+
+[![image](https://user-images.githubusercontent.com/6307522/139159617-18e4e58f-ca1e-4f8d-8df2-dcfcf69b5b78.png)](https://vizhub.com/Ironraptor3/e9f27fcd1af343cc8a0577364c35c873)
+
+This is a way of visualizing how each genre contributed to the total sales in each country, though it is hard to directly compare genres.  Issues with this visualization include a lack of a key/legend (as in the previous graph), and odd line behavior in the beginning (left) side of the graph.
 
 ## Interaction
 
