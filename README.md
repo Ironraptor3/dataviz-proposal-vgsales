@@ -144,6 +144,15 @@ Finally, I experimented with a Streamgraph (Stacked area chart which is centered
 
 This is a way of visualizing how each genre contributed to the total sales in each country, though it is hard to directly compare genres.  Issues with this visualization include a lack of a key/legend (as in the previous graph), and odd line behavior in the beginning (left) side of the graph.
 
+### Fifth Iteration
+
+This iteration saw a return to the original set of small multiples that I had been working on.  The main change made to this iteration is fixes on the axes when the user zooms and pans.  The user cannot pan past the bounds of the original graph, and cannot zoom out past holding the entire graph of a small multiple.  Instead of modifying the viewports of the axes, I instead redraw the axes with a different domain when the user interacts with the graphs.
+
+Quality of life changes include a fake-mask rectangle below the axes and the removal of the guide lines.  The rectangles prevent the graph from overlapping the axes as the user pans and zooms.  The removal of the guide lines was done (perhaps temporarily), because they appeared to be visual clutter and I am unsure on which direction I want to take their behavior at the moment.
+
+[![image](https://user-images.githubusercontent.com/6307522/141236246-c09c752c-d762-497c-b492-699e017ea783.png)](https://vizhub.com/Ironraptor3/f9b500a0c59c44369cb3f14ec3d46a18)
+
+
 ## Interaction
 
 Interaction is key within this project.  Many methods of interaction have been added throughout the iterations of it so far, enumerated here for convenience:
