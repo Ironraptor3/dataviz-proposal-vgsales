@@ -152,6 +152,23 @@ Quality of life changes include a fake-mask rectangle below the axes and the rem
 
 [![image](https://user-images.githubusercontent.com/6307522/141236246-c09c752c-d762-497c-b492-699e017ea783.png)](https://vizhub.com/Ironraptor3/f9b500a0c59c44369cb3f14ec3d46a18)
 
+### Sixth Iteration
+
+This iteration was again an exploratory iteration, where I made two different graphs to showcase the dataset.
+
+The first graph is a collection of scatter plots that measure the mean sales vs the variance in sales of publishers in each category.  I believed it would be interesting to see whether certain genres were more consistent vs their profitability.  Originally, very large variances obsured many of the data points.  To fix this, I measured the mean and variance of the variances, and then used a Z score as a cutoff filter to exclude severe outliers. Finally, hovering over points allows the user to see the name of the company the point represents, though this is clearly difficult when the points are very dense.
+
+[![image](https://user-images.githubusercontent.com/6307522/142563659-c917ea7e-93e0-4a88-82ab-75efa2122b62.png)](https://vizhub.com/Ironraptor3/520c93f628574f71b9d506a43942a50c)
+
+The next graph was much more interesting and clean.  It is a faux-box-and-whisker plot which compares consoles over time.  As median would not make sense to implement over time, I used a weighted mean over the years to get the quartiles.  To best format this data, I made a new array of data which had duplicates of years based on the rounded up aggregate sales per genre.  The ObservableHQ code then computed the quartiles on these to display the box and whisker plot.
+
+[![image](https://user-images.githubusercontent.com/6307522/142563971-2b1a93a0-1961-48e8-9344-c3ac971dcd34.png)](https://vizhub.com/Ironraptor3/8c8893cc28e94e00a71888e2e4dbee90)
+
+Finally, I began refactoring my [main graph](https://vizhub.com/Ironraptor3/bb25787fb96f4b4883d5ec972cafdad6) into modules.  I came across several questions while doing so, the top two being:
+- What should I do about passing many constant values in various places?
+- How should I deal with modules that all reference another module best?
+
+To resolve this, I will meet with the professor again and discuss the best way of approaching this.
 
 ## Interaction
 
