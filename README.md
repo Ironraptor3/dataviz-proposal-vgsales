@@ -170,6 +170,23 @@ Finally, I began refactoring my [main graph](https://vizhub.com/Ironraptor3/bb25
 
 To resolve this, I will meet with the professor again and discuss the best way of approaching this.
 
+### Seventh Iteration
+
+Within this iteration, I more deeply explored the visualizations produced by the last iteration.
+
+To improve the story told by my scatter plot small multiples (plotting mean vs variance of companies in each genre), I added labels to outlier points:
+
+[![image](https://user-images.githubusercontent.com/6307522/143296303-7fd85edf-0223-4bbd-96a4-ddaf8369fb9d.png)](https://vizhub.com/Ironraptor3/c917535473e64ccea1b1e25dd2102058)
+
+Then, I transitioned to using a histogram for showing sales distributions of each Platform throughout the years.  There is interaction that allows the user to see various types of sales via a dropdown menu at the top.  As demonstrated within other graphs, Japan has behavior unlike the other regions.
+
+[![image](https://user-images.githubusercontent.com/6307522/143296485-c9b2bcb8-c61d-4b4b-a4f6-bcacdf7abd21.png)](https://vizhub.com/Ironraptor3/27b5ea7171124cbfa90e44a4224d92f3)
+
+Finally, I used a Jupyter Notebook to visualize the box and whisker version of the data as a Joyplot, to better understand distributions:
+
+![JP_Screenshot](https://user-images.githubusercontent.com/6307522/143296615-66f2c147-285a-47e7-bbd2-eab3fa4b24ce.PNG)
+
+
 ## Interaction
 
 Interaction is key within this project.  Many methods of interaction have been added throughout the iterations of it so far, enumerated here for convenience:
