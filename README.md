@@ -2,7 +2,7 @@
 
 ## Video
 
-[Here is the link to the video corresponding to this README](TODO)
+[Here is the link to the video corresponding to this README](https://youtu.be/jOKH9JIsMPQ)
 
 ## Data
 I plan on using this [data for video game sales](https://gist.github.com/Ironraptor3/34f3938c703111353ee5f28cc9b29d68) for the project.
@@ -114,7 +114,7 @@ Adjustments were made to several constants to provide a better visual feeling.
 
 ### Third Iteration
 
-This is the latest iteration of the project: [![image](https://user-images.githubusercontent.com/6307522/137227924-2dbb5a47-f0cd-4468-bbf2-5fd58608de5a.png)](https://vizhub.com/Ironraptor3/baa79abe42d8486fa829b80d31aefeeb)
+[![image](https://user-images.githubusercontent.com/6307522/137227924-2dbb5a47-f0cd-4468-bbf2-5fd58608de5a.png)](https://vizhub.com/Ironraptor3/baa79abe42d8486fa829b80d31aefeeb)
 
 While there does not appear to be a lot of changes in a static image, many interactions were improved:
 
