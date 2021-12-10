@@ -1,5 +1,9 @@
 # vgsales Visualization Project
 
+## Video
+
+[Here is the link to the video corresponding to this README](TODO)
+
 ## Data
 I plan on using this [data for video game sales](https://gist.github.com/Ironraptor3/34f3938c703111353ee5f28cc9b29d68) for the project.
 
@@ -186,52 +190,33 @@ Finally, I used a Jupyter Notebook to visualize the box and whisker version of t
 
 ![JP_Screenshot](https://user-images.githubusercontent.com/6307522/143296615-66f2c147-285a-47e7-bbd2-eab3fa4b24ce.PNG)
 
+### Final (Eighth) Iteration
+
+This was the final iteration of the project, and I dedicated it to fixing problems with previous visualizations, and adding final features to my more extensive visualization.
+
+I fixed the original Streamgraph which compared genre sales over time.  I fixed the odd artifacts at the beginning of the graph by adding 0 value data points for missing genres in a year (since earlier years had sparse amounts of releases).  I also added a key containing the colors of each genre.  Unfortunately, I could not figure out how to reverse the order of the key, as it is upside down relative to the graph.
+
+[![image](https://user-images.githubusercontent.com/6307522/145517076-12bbc962-f1db-4ba8-aa6a-2ddee437e61c.png)](https://vizhub.com/Ironraptor3/d421e62b047144cbb9e694c68456b539)
+
+Then, I made a much fancier streamgraph based on console sales over the years.  Ultimately, I needed some assistance from professor Curran, which is why the Viz displayed here is listed under his account.  I believe it turned out very beautiful overall, and I had fun taking apart the code I forked it from.
+
+[![image](https://user-images.githubusercontent.com/6307522/145517239-abe03599-511d-4a1e-8daf-e6284b4af825.png)](https://vizhub.com/curran/fef649d9bfc34006b3808bdf9f681915)
+
+Then, I made a much simpler line graph of genre sales over time to compare to my big visualization project.  This too includes interaction and a corresponding key.
+
+[![image](https://user-images.githubusercontent.com/6307522/145517284-d35e82d2-5a0d-40a6-a157-0402bfb1df7e.png)](https://vizhub.com/Ironraptor3/f22da35729284005bdeb38b97cfbe3ce)
+
+Finally, I added the functionality of hiding and showing graphs in my main vizualization.  By clicking on the title of a graph, the graph is hidden and the rest are redrawn to fill the spawn.  This also creates a set of buttons under the 'reset view' button.  This set of buttons shows the graphs that have been hidden again.  Through implementing this, my code became a lot cleaner and more modular.
+
+[![image](https://user-images.githubusercontent.com/6307522/145517487-8d2df996-a24b-4344-a529-7fd76556a8bd.png)](https://vizhub.com/Ironraptor3/2390f296f2b044cda3756215e5ba1252)
+
+Overall, I am very happy with the work I put into this final iteration.
+
 
 ## Interaction
 
-Interaction is key within this project.  Many methods of interaction have been added throughout the iterations of it so far, enumerated here for convenience:
-
-- Guidelines which appear when the user clicks
-  + These now scale with zoom
-  + These are drawn on all small multiples
-- Interactive Key
-  + Hover to highlight (now with a dark outline and a change in z ordering)
-  + Click to toggle visibility
-- Zoom and Pan
-  + All small multiples follow this action
-  + Pan speed scales with zoom
-  + Including a reset button to recenter the viewbox to the default position
-  + Shapes scale down to account for high zoom
-  + Axes now remain (mostly) visible
-
-I currently plan on adding the following features:
-
-- Toggle entire graphs on and off
-  + Rescaling the ones that remain and rearranging them
-- Dropdowns that allow users to compare different values
+The interactions available in each graph are summarized in their respective sections.
 
 ## Schedule of Deliverables
 
-- Code reorganization (November 3)
-  + More modularity
-  + Better segementation of tasks
-  + More comments
-  + Get rid of magic numbers
-- Axis and guideline fixes (November 10)
-  + Axis granularity changes with zoom level
-  + Axis always on screen (infinite)
-  + Guideline always on screen (infinite)
-- Visual fixes (November 17)
-  + Color pallette fixes
-  + Constants involving margins, spacing, thickness
-- Toggle graphs on and off (November 24)
-  + A control panel to perform this functionality
-  + Rescaling graphs
-  + Redrawing graphs in the same state as they were previously in
-- Using different data (December 1)
-  + Dropdowns that respond to events
-  + Re-rendering graphs based on different categories on each axis
-- Final submission (December 8)
-  + All overflow in schedule addressed
-  + Bug fixes
-  + Description Revamps
+Each iteration of this project took approximately a week.  I feel the work that I have gotten done adequately reflects the deliverables I wished to present and explore throughout the semester.
